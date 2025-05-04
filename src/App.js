@@ -18,6 +18,7 @@ import Editpost from "./pages/write/Editpost";
 import TopicPage from "./pages/TopicPage";
 function App() {
   const { user } = useSelector((state) => ({ ...state }));
+  console.log(process.env.REACT_APP_BACKEND_URL);
 
   inject();
 
@@ -41,7 +42,7 @@ function App() {
           <Route path="/auth" exact element={<Auth />} />
           <Route path="/intogoogle" element={<Intogoogle />} />
         </Route>
-        <Route path="*"  element={<Not_found />}/>
+        <Route path="*" element={<Not_found />} />
 
       </Routes>
     </div>
