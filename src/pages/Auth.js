@@ -118,7 +118,7 @@ function Auth() {
           password,
         }
       );
-
+      console.log(process.env.REACT_APP_BACKEND_URL, data);
       setError('')
       setSuccess(data.message)
       const { message, ...rest } = data;
@@ -128,6 +128,7 @@ function Auth() {
         navigate("/");
       }, 2000);
     } catch (error) {
+      console.log(error);
       setError(error.response.data.message);
     }
   };
