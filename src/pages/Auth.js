@@ -59,7 +59,7 @@ function Auth() {
           return;
         }
       } catch (error) {
-        // console.log(error);
+        console.log(error);
       }
       logIn();
     } else {
@@ -81,7 +81,7 @@ function Auth() {
       const data = await checkotpv(temail, otpv);
     } catch (error) {
       setError('An Error Occurred')
-      // console.log("cannot verify otp")
+      console.log("cannot verify otp")
     }
   }
   const logIn = async () => {
@@ -93,7 +93,7 @@ function Auth() {
           temail,
           password,
         }
-      ); 
+      );
       setError('')
       setSuccess("Success !")
       setTimeout(() => {
@@ -102,7 +102,7 @@ function Auth() {
         navigate("/");
       }, 2000);
     } catch (error) {
-      // console.log(error)
+      console.log(error)
       setError(error.response.data.message);
     }
   };
@@ -211,7 +211,7 @@ function Auth() {
               <span onClick={() => signUpWithGoogle()}>Sign Up with Google</span>
             </div>
           </div>
-          
+
         )}
         {/* <span className="or">or</span> */}
         OR
